@@ -1,12 +1,12 @@
 
 import numpy as np
 from flask import Flask, request, jsonify, render_template
-from flask_ngrok import run_with_ngrok
+# from flask_ngrok import run_with_ngrok
 import pickle as pk
 import pandas as pd
 from sklearn import linear_model
 app = Flask(__name__)
-run_with_ngrok(app)
+# run_with_ngrok(app)
 
 #load required data from workspace
 Salesperson_and_location = pd.read_csv("Salesperson and clientid (1).csv")
@@ -115,4 +115,4 @@ def predict():
 
 
 if __name__ == "__main__":
-   app.run()
+   app.run(debug=True)
