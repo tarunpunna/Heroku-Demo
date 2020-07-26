@@ -1,18 +1,20 @@
 
 import numpy as np
 from flask import Flask, request, jsonify, render_template
-# from flask_ngrok import run_with_ngrok
+from flask_ngrok import run_with_ngrok
 import pickle as pk
 import pandas as pd
 from sklearn import linear_model
-import pandas as pd
 app = Flask(__name__)
-# run_with_ngrok(app)
+run_with_ngrok(app)
 
 #load required data from workspace
 Salesperson_and_location = pd.read_csv("Salesperson and clientid (1).csv")
 Salesperson_rating = pd.read_csv("Salesperson closing ratio (1).csv")
 city_wise_ratio = pd.read_excel("City wise closing ratio salesperson (1).xlsx")
+#load id and city columns from test data
+fields = ["id", "City"]
+
 testData = pd.read_csv("test data (1).csv", usecols=fields)
 
 @app.route('/')
@@ -83,8 +85,6 @@ def predict():
 
    #Testing
 
-   #load id and city columns from test data
-   fields = ["id", "City"]
 
    #Check which city corresponds to input id
    cityName=testData[(testData['id'] == id)]['City']
@@ -115,4 +115,4 @@ def predict():
 
 
 if __name__ == "__main__":
-   app.run(debug=True)
+   app.run()
