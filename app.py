@@ -35,28 +35,28 @@ def predict():
 
 
 
-   #getting the unique city names
-   cities = Salesperson_and_location.City.unique()
+#    #getting the unique city names
+#    cities = Salesperson_and_location.City.unique()
 
-   #read salespersons names and their overall closing ratio
-   salespersons = Salesperson_rating["SalespersonName"].tolist()
-   Closing_Ratio_list = Salesperson_rating["Closing Ratio"].tolist()
+#    #read salespersons names and their overall closing ratio
+#    salespersons = Salesperson_rating["SalespersonName"].tolist()
+#    Closing_Ratio_list = Salesperson_rating["Closing Ratio"].tolist()
 
-   # This funciton doubles the space between two names 
-   #to match those in  Salesperson and clientId datafram
-   import re
-   def doubleSpace(name):
-     name = re.sub(' ', '  ', name)
-     return name
+#    # This funciton doubles the space between two names 
+#    #to match those in  Salesperson and clientId datafram
+#    import re
+#    def doubleSpace(name):
+#      name = re.sub(' ', '  ', name)
+#      return name
 
-   # save the new names in a separate list
-   spaced_salespersons= []
+#    # save the new names in a separate list
+#    spaced_salespersons= []
 
-   for i, name in enumerate(salespersons):
-     if name != 'Mark  ':
-       spaced_salespersons.append(doubleSpace(salespersons[i]))
-     else: 
-       spaced_salespersons.append('Mark  ')
+#    for i, name in enumerate(salespersons):
+#      if name != 'Mark  ':
+#        spaced_salespersons.append(doubleSpace(salespersons[i]))
+#      else: 
+#        spaced_salespersons.append('Mark  ')
 
 
 #    # Create the table
