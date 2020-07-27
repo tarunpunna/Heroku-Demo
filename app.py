@@ -119,7 +119,7 @@ def predict():
    df3 = df2.sort_values(["predicted city rating"], 
                          ascending = (False))
 
-   output = df3['salespersons_name'].values[0]
+   output = df3
 
 #    return render_template('index.html', prediction_text='salespersons_name: {}'.format(output))
    return render_template('index.html', prediction_text=tabulate(output, headers='keys', tablefmt='psql'))
