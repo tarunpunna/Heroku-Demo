@@ -6,6 +6,8 @@ import pickle as pk
 import pandas as pd
 from sklearn import linear_model
 import pickle as pk
+from tabulate import tabulate
+
 app = Flask(__name__)
 # run_with_ngrok(app)
 
@@ -120,7 +122,7 @@ def predict():
    output = df3['salespersons_name'].values[0]
 
 #    return render_template('index.html', prediction_text='salespersons_name: {}'.format(output))
-   return render_template('index.html', prediction_text=df3)
+   return render_template('index.html', prediction_text=tabulate(output, headers='keys', tablefmt='psql'))
 
 
 if __name__ == "__main__":
