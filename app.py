@@ -119,7 +119,7 @@ def predict():
    df3 = df2.sort_values(["predicted city rating"], 
                          ascending = (False))
 
-   output = df3.reset_index()
+   output = df3.reset_index(drop=True)
 #    return render_template('index.html', prediction_text='salespersons_name: {}'.format(output))
    return render_template('index.html', prediction_text=output.to_json())
 
