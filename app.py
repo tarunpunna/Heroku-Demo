@@ -83,38 +83,38 @@ def predict():
 #    df['count'] = df['count'].astype("int")
 #    df['overall rating'] = df['overall rating'].astype("float64")
 #    df['city rating'] = df['city rating'].astype("float64")
-#    df = pd.read_csv("df.csv")
+   df = pd.read_csv("df.csv")
 
 
-#    #Testing
+   #Testing
 
 
-#    #Check which city corresponds to input id
-#    cityName=testData[(testData['id'] == id)]['City']
-#    cityName=cityName.values[0]
+   #Check which city corresponds to input id
+   cityName=testData[(testData['id'] == id)]['City']
+   cityName=cityName.values[0]
 
-#    # Create a dataframe of the sorted salespersons
-#    df1 = df[(df['city']== cityName)]
-#    df1 = df1.sort_values(["count", "overall rating"], 
-#                          ascending = (False, False))
+   # Create a dataframe of the sorted salespersons
+   df1 = df[(df['city']== cityName)]
+   df1 = df1.sort_values(["count", "overall rating"], 
+                         ascending = (False, False))
 
-#    #Print only highest three
-#    df2 = df1.iloc[:3]
-#    df3= df1.iloc[3:]
-# #    model = linear_model.LinearRegression()
+   #Print only highest three
+   df2 = df1.iloc[:3]
+   df3= df1.iloc[3:]
+#    model = linear_model.LinearRegression()
 
-# #    model.fit(pd.get_dummies(df3.drop(columns="city rating")), df3["city rating"])
+#    model.fit(pd.get_dummies(df3.drop(columns="city rating")), df3["city rating"])
 
 
-#    y_hat = model.predict(pd.get_dummies(df2.drop(columns="city rating")))
-#    y_hat[y_hat < 0] = 0
-#    df2['predicted city rating'] = y_hat
-#    df3 = df2.sort_values(["predicted city rating"], 
-#                          ascending = (False))
+   y_hat = model.predict(pd.get_dummies(df2.drop(columns="city rating")))
+   y_hat[y_hat < 0] = 0
+   df2['predicted city rating'] = y_hat
+   df3 = df2.sort_values(["predicted city rating"], 
+                         ascending = (False))
 
-#    output = df3['salespersons_name'].values[0]
+   output = df3['salespersons_name'].values[0]
 
-   return render_template('index.html', prediction_text='salespersons_name: {}'.format(id))
+   return render_template('index.html', prediction_text='salespersons_name: {}'.format(output))
 
 
 if __name__ == "__main__":
