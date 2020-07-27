@@ -84,6 +84,11 @@ def predict():
 #    df['overall rating'] = df['overall rating'].astype("float64")
 #    df['city rating'] = df['city rating'].astype("float64")
    df = pd.read_csv("df.csv")
+   df['salespersons_name'] = df['salespersons_name'].astype("category")
+   df['city'] = df['city'].astype("category")
+   df['count'] = df['count'].astype("int")
+   df['overall rating'] = df['overall rating'].astype("float64")
+   df['city rating'] = df['city rating'].astype("float64")
 
 
    #Testing
@@ -106,13 +111,13 @@ def predict():
 #    model.fit(pd.get_dummies(df3.drop(columns="city rating")), df3["city rating"])
 
 
-#    y_hat = model.predict(pd.get_dummies(df2.drop(columns="city rating")))
-#    y_hat[y_hat < 0] = 0
-#    df2['predicted city rating'] = y_hat
-#    df3 = df2.sort_values(["predicted city rating"], 
-#                          ascending = (False))
+   y_hat = model.predict(pd.get_dummies(df2.drop(columns="city rating")))
+   y_hat[y_hat < 0] = 0
+   df2['predicted city rating'] = y_hat
+   df3 = df2.sort_values(["predicted city rating"], 
+                         ascending = (False))
 
-#    output = df3['salespersons_name'].values[0]
+   output = df3['salespersons_name'].values[0]
 
    return render_template('index.html', prediction_text='salespersons_name: {}'.format(10))
 
