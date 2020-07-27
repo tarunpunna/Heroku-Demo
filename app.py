@@ -122,7 +122,7 @@ def predict():
    output = df3
 
 #    return render_template('index.html', prediction_text='salespersons_name: {}'.format(output))
-   return render_template('index.html', prediction_text=output.to_html())
+   return render_template('index.html', prediction_text=output.to_markdown())
 
 
 if __name__ == "__main__":
