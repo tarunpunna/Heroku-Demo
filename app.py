@@ -106,7 +106,7 @@ def predict():
 #    model.fit(pd.get_dummies(df3.drop(columns="city rating")), df3["city rating"])
 
 
-   y_hat = model.predict(pd.get_dummies(df2.drop(columns="city rating")))
+#    y_hat = model.predict(pd.get_dummies(df2.drop(columns="city rating")))
 #    y_hat[y_hat < 0] = 0
 #    df2['predicted city rating'] = y_hat
 #    df3 = df2.sort_values(["predicted city rating"], 
