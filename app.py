@@ -107,14 +107,14 @@ def predict():
 
 
    y_hat = model.predict(pd.get_dummies(df2.drop(columns="city rating")))
-   y_hat[y_hat < 0] = 0
-   df2['predicted city rating'] = y_hat
-   df3 = df2.sort_values(["predicted city rating"], 
-                         ascending = (False))
+#    y_hat[y_hat < 0] = 0
+#    df2['predicted city rating'] = y_hat
+#    df3 = df2.sort_values(["predicted city rating"], 
+#                          ascending = (False))
 
-   output = df3['salespersons_name'].values[0]
+#    output = df3['salespersons_name'].values[0]
 
-   return render_template('index.html', prediction_text='salespersons_name: {}'.format(output))
+   return render_template('index.html', prediction_text='salespersons_name: {}'.format(10))
 
 
 if __name__ == "__main__":
