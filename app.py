@@ -31,7 +31,7 @@ def predict():
    int_features = [int(x) for x in request.form.values()]
    # final_features = [np.array(int_features)]
    
-   id = int_features[0]
+   id = 7 #int_features[0]
 
 
 
