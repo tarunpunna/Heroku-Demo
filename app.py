@@ -59,7 +59,7 @@ def predict():
 #        spaced_salespersons.append(doubleSpace(salespersons[i]))
 #      else: 
 #        spaced_salespersons.append('Mark  ')
-
+a
 
 #    # Create the table
 #    data = [] 
@@ -85,7 +85,7 @@ def predict():
 #    df['count'] = df['count'].astype("int")
 #    df['overall rating'] = df['overall rating'].astype("float64")
 #    df['city rating'] = df['city rating'].astype("float64")
-   df = pd.read_csv("df.csv")
+   df = pd.read_csv("df.csv") /
    df['salespersons_name'] = df['salespersons_name'].astype("category")
    df['city'] = df['city'].astype("category")
    df['count'] = df['count'].astype("int")
