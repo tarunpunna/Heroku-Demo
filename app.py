@@ -59,24 +59,24 @@ def predict():
        spaced_salespersons.append('Mark  ')
 
 
-#    # Create the table
-#    data = [] 
-#    df = pd.DataFrame(data, columns = ['salespersons_name',
-#        'city','count', 'overall rating', 'city rating'])
+   # Create the table
+   data = [] 
+   df = pd.DataFrame(data, columns = ['salespersons_name',
+       'city','count', 'overall rating', 'city rating'])
 
-#    for i, name in enumerate(spaced_salespersons):
-#      Closing_Ratio = Closing_Ratio_list[i]
-#      for city in cities:
-#        count = len(Salesperson_and_location[(Salesperson_and_location['SalespersonName'] == name) & (Salesperson_and_location['City']== city)])
-#        cityRating = city_wise_ratio[(city_wise_ratio['SalespersonName'] == salespersons[i])  & (city_wise_ratio['City']== city)]['Closing Ratio']
-#        if cityRating.values.shape ==(1,):
-#          cityRating = float(cityRating.values)
-#        else:
-#          cityRating = 0
-#        new_row = {'salespersons_name':name,
-#                  'city':city, 'count':count, 'overall rating': Closing_Ratio,'city rating': cityRating}
-#        #append row to the dataframe
-#        df = df.append(new_row, ignore_index=True)
+   for i, name in enumerate(spaced_salespersons):
+     Closing_Ratio = Closing_Ratio_list[i]
+     for city in cities:
+       count = len(Salesperson_and_location[(Salesperson_and_location['SalespersonName'] == name) & (Salesperson_and_location['City']== city)])
+       cityRating = city_wise_ratio[(city_wise_ratio['SalespersonName'] == salespersons[i])  & (city_wise_ratio['City']== city)]['Closing Ratio']
+       if cityRating.values.shape ==(1,):
+         cityRating = float(cityRating.values)
+       else:
+         cityRating = 0
+       new_row = {'salespersons_name':name,
+                 'city':city, 'count':count, 'overall rating': Closing_Ratio,'city rating': cityRating}
+       #append row to the dataframe
+       df = df.append(new_row, ignore_index=True)
 
 #    df['salespersons_name'] = df['salespersons_name'].astype("category")
 #    df['city'] = df['city'].astype("category")
