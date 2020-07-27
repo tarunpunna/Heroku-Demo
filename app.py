@@ -5,6 +5,7 @@ from flask import Flask, request, jsonify, render_template
 import pickle as pk
 import pandas as pd
 from sklearn import linear_model
+import pickle as pk
 app = Flask(__name__)
 # run_with_ngrok(app)
 
