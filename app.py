@@ -31,7 +31,7 @@ def predict():
    int_features = [int(x) for x in request.form.values()]
    # final_features = [np.array(int_features)]
    
-   id = 7 #int_features[0]
+   id = int_features[0]
 
 
 
@@ -113,7 +113,7 @@ def predict():
 
 #    output = df3['salespersons_name'].values[0]
 
-   return render_template('index.html', prediction_text='salespersons_name: {}'.format(3))
+   return render_template('index.html', prediction_text='salespersons_name: {}'.format(id))
 
 
 if __name__ == "__main__":
